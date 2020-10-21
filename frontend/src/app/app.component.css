@@ -1,0 +1,9 @@
+.example-spacer {
+  flex: 1 1 auto;
+  
+} 
+
+.example-spacer1 {
+  flex: 0.1 0.2 0;
+  
+}

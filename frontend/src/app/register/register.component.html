@@ -1,0 +1,107 @@
+<!-- <form (submit)="register()" class="example-form">
+    <div class="form-group">
+         <mat-form-field class="example-full-width">
+        <mat-label>Full name</mat-label>
+        <input matInput placeholder="Ex. ABC" [(ngModel)]="credentials.name">
+        </mat-form-field>
+    </div>
+
+<div class="form-group">
+    <mat-form-field class="example-full-width">
+      <mat-label>Email</mat-label>
+      <input matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+             placeholder="Ex. pat@example.com" [(ngModel)]="credentials.email">
+      <mat-hint></mat-hint>
+      <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="emailFormControl.hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+
+    <div class="form-group">
+      
+      <mat-form-field class="example-full-width">
+        <mat-label>Phone number</mat-label>
+        <span matPrefix>+91 &nbsp;</span>
+        <input type="tel" matInput placeholder="555-555-1234"  [(ngModel)]="credentials.phone">
+        <mat-icon matSuffix>phone</mat-icon>
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+     
+      <mat-form-field class="example-full-width" >
+        <mat-label>Enter your password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="credentials.password">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+      
+    </div>
+    
+    <button type="submit" mat-raised-button color="primary">Register</button>
+  </form> -->
+
+
+
+
+
+<section class="forms-section">
+  <div class="forms">
+    <div class="form-wrapper">
+      <button type="button" class="switcher switcher-login" onclick="window.location.href='/login';">
+        Login
+        <span class="underline"></span>
+      </button>
+      <form class="form form-login">
+        
+      </form>
+    </div>
+    <div class="form-wrapper is-active">
+      <button type="button" class="switcher switcher-signup">
+        Register
+        <span class="underline"></span>
+      </button>
+      <form class="form form-signup"  (submit)="register()">
+        <fieldset>
+          <legend>Please, enter your email, password and password confirmation for sign up.</legend>
+         
+          <div class="input-field">
+            <input type="text" name="name" id="name" [(ngModel)]="credentials.name" required>
+            <label for="name">Your name:</label>
+          </div>
+
+          <div class="input-field">
+            <input matInput type="email" name="email" id="email" required [formControl]="emailFormControl" [errorStateMatcher]="matcher" [(ngModel)]="credentials.email">
+            <label for="email"> E-mail:</label>
+           
+      <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required') ">
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="emailFormControl.hasError('required') && emailFormControl.hasError('untouched')">
+        Email is <strong>required</strong>
+      </mat-error>
+          </div>
+
+         
+          <div class="input-field">
+            <input type="text" name="phone" id="phone" required [(ngModel)]="credentials.phone">
+            <label for="phone"> Phone:</label>
+          </div>
+
+          <div class="input-field">
+            <input type="password" name="password" id="password" required [(ngModel)]="credentials.password">
+            <label for="password"> Password:</label>
+          </div>
+
+        </fieldset>
+        <button type="submit" class="btn-signup">Register</button>
+      </form>
+    </div>
+  </div>
+</section>

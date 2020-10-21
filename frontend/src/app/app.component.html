@@ -1,0 +1,32 @@
+<p>
+  <mat-toolbar>
+   <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Krafty <mat-icon>all_inclusive</mat-icon></span>
+  
+  <span class="example-spacer"></span>
+ 
+  <button mat-icon-button *ngIf="!auth.isLoggedIn()" class="example-spacer1 favorite-icon" onclick="window.location.href='/login';">
+    <mat-label>Login</mat-label>
+  </button>
+  <button mat-icon-button *ngIf="!auth.isLoggedIn()" class="example-spacer1 favorite-icon" onclick="window.location.href='/register';">
+    <mat-label>Register</mat-label>
+  </button>
+
+  <button mat-icon-button *ngIf="auth.isLoggedIn()" class="example-spacer1 favorite-icon" onclick="window.location.href='/';">
+    <mat-label>Logout</mat-label>
+  </button>
+  <button mat-icon-button *ngIf="auth.isLoggedIn()" class="example-icon" aria-label="Example icon-button with cart icon">
+    <mat-icon>person</mat-icon>
+  </button>
+ 
+  <button mat-icon-button *ngIf="auth.isLoggedIn()" class="example-icon" aria-label="Example icon-button with cart icon">
+   <mat-icon>local_grocery_store</mat-icon>
+ </button>
+
+</mat-toolbar>
+</p>
+
+
+<router-outlet></router-outlet>

@@ -1,0 +1,76 @@
+<mat-grid-list cols="5" rowHeight="2:3"  >
+  
+   <div *ngFor="let p of product; let i = index" [attr.data-index]="i">
+  <mat-grid-tile> <mat-card class="example-card">
+    
+      <mat-card-content>
+        
+        <img height="200" width="185" [src]="imageurl[i]" />
+           <h5>Item: {{p?.name}}</h5> 
+           <h1>Cost: {{p?.price}} </h1> 
+          
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>Add to Cart</button>
+          <button mat-button>Buy Now</button>
+        </mat-card-actions>
+      </mat-card></mat-grid-tile>
+
+    </div>
+
+<!-- 
+  <mat-grid-tile><mat-card class="example-card">
+        <img mat-card-image src="..\assets\img\products\clothing\product2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+       
+           <h5>Item: </h5> 
+           <h1>Cost: ₹1000</h1> 
+          
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>Add to cart</button>
+          <button mat-button>Buy Now</button>
+        </mat-card-actions>
+      </mat-card></mat-grid-tile>
+    <mat-grid-tile><mat-card class="example-card">
+        <img mat-card-image src="..\assets\img\products\clothing\product3.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+       
+           <h5>Item: </h5> 
+           <h1>Cost: ₹1500</h1> 
+          
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>Add to cart</button>
+          <button mat-button>Buy Now</button>
+        </mat-card-actions>
+      </mat-card></mat-grid-tile>
+
+    <mat-grid-tile><mat-card class="example-card">
+        <img mat-card-image src="..\assets\img\products\clothing\product4.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+       
+           <h5>Item: </h5> 
+           <h1>Cost: ₹2000</h1> 
+          
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>Add to cart</button>
+          <button mat-button>Buy Now</button>
+        </mat-card-actions>
+      </mat-card></mat-grid-tile>
+      
+    <mat-grid-tile><mat-card class="example-card">
+      <img mat-card-image src="..\assets\img\products\clothing\product5.jpg" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+     
+         <h5>Item: </h5> 
+         <h1>Cost: ₹3000</h1> 
+        
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>Add to cart</button>
+        <button mat-button>Buy Now</button>
+      </mat-card-actions>
+    </mat-card></mat-grid-tile>  -->
+  </mat-grid-list>
