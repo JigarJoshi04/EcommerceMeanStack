@@ -6,14 +6,14 @@
   <span>Krafty <mat-icon>all_inclusive</mat-icon></span>
   
   <span class="example-spacer"></span>
- 
   <button mat-icon-button *ngIf="!auth.isLoggedIn()" class="example-spacer1 favorite-icon" onclick="window.location.href='/login';">
     <mat-label>Login</mat-label>
   </button>
   <button mat-icon-button *ngIf="!auth.isLoggedIn()" class="example-spacer1 favorite-icon" onclick="window.location.href='/register';">
     <mat-label>Register</mat-label>
   </button>
-
+  <button mat-icon-button *ngIf="!auth.isLoggedIn()" class="example-spacer1 favorite-icon" onclick="window.location.href='/cart';"><i class="fas fa-shopping-cart"></i></button>
+ 
   <button mat-icon-button *ngIf="auth.isLoggedIn()" class="example-spacer1 favorite-icon" onclick="window.location.href='/';">
     <mat-label>Logout</mat-label>
   </button>
