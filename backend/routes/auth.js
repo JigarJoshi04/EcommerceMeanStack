@@ -7,7 +7,7 @@ const { registerValidation,loginValidation} = require('../models/validation')
 
 
 router.post("/register", async (req, res) => {
-
+ console.log("hey")
  const {error} = registerValidation(req.body);
  if(error) return res.status(400).send(error.details[0].message);
 

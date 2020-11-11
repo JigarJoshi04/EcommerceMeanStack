@@ -1,1 +1,59 @@
-<!-- Design Cart Page. -->
+<h1>Shopping Cart</h1>
+<div class="shopping-cart">
+
+  <div class="column-labels">
+    <label class="product-image">Image</label>
+    <label class="product-details">Product</label>
+    <label class="product-price">  Price</label>
+    <label class="product-quantity">Quantity</label>
+    <label class="product-removal">Remove</label>
+    <label class="product-line-price">Total</label>
+  </div>
+  
+  <div *ngFor ="let p of product; let i = index" [attr.data-index]="i">
+    <div class="product">
+      <div class="product-image">
+        <img [src]="imageurl[i]" />
+      </div>
+      <div class="product-details">
+        <div class="product-title">{{p?.name}}</div>
+        <p class="product-description">{{p?.__v}}</p>
+      </div>
+      <div class="product-price">{{p?.price}}</div>
+    
+      <div class="product-quantity">
+        <input id= "{{p?._id}}" type="number" (click)="unknownClicked(p._id)"  value={{p?.__v}} min="1">
+      </div>
+      <div class="product-removal">
+        <button id = "{{p?._id}}" (click)="removeProduct(p._id)" class="remove-product">
+          Remove
+        </button>
+      </div>
+      <div class="product-line-price">{{semi_total[i]}}</div>
+    </div>
+  
+  </div>
+
+
+  <div class="totals">
+    <div class="totals-item">
+      <label>Subtotal</label>
+      <div class="totals-value" id="cart-subtotal">{{total}}</div>
+    </div>
+    <div class="totals-item">
+      <label>Tax (5%)</label>
+      <div class="totals-value" id="cart-tax">{{total*0.05}}</div>
+    </div>
+    <div class="totals-item">
+      <label>Shipping</label>
+      <div class="totals-value" id="cart-shipping">{{shipping}}</div>
+    </div>
+    <div class="totals-item totals-item-total">
+      <label>Grand Total</label>
+      <div class="totals-value" id="cart-total">{{grand_total+total*0.05}}</div>
+    </div>
+  </div>
+      
+      <button class="checkout">Checkout</button>
+
+</div> 

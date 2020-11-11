@@ -1,10 +1,15 @@
-<div class="form-horizontal">
+<h1>JIgar </h1>
+<div *ngFor ="let p of product; let i = index" [attr.data-index]="i">
+  <h1>{{p?._id}}</h1>
+  <h1>JOsis</h1>
+</div>
+<!-- <div class="form-horizontal">
     <div class="form-group">
       <label class="col-sm-3 control-label">Full name</label>
-      <p class="form-control-static">{{ details?.name }}</p>
+      <p class="form-control-static">{{ we_user?.name }}</p>
     </div>
     <div class="form-group">
       <label class="col-sm-3 control-label">Email</label>
-      <p class="form-control-static">{{ details?.email }}</p>
+      <p class="form-control-static">{{ we_user?.email }}</p>
     </div>
-  </div>
+  </div> -->

@@ -17,11 +17,11 @@
   <button mat-icon-button *ngIf="auth.isLoggedIn()" class="example-spacer1 favorite-icon" onclick="window.location.href='/';">
     <mat-label>Logout</mat-label>
   </button>
-  <button mat-icon-button *ngIf="auth.isLoggedIn()" class="example-icon" aria-label="Example icon-button with cart icon">
+  <button mat-icon-button *ngIf="auth.isLoggedIn()" (click)="profileClicked()" class="example-icon" aria-label="Example icon-button with cart icon">
     <mat-icon>person</mat-icon>
   </button>
  
-  <button mat-icon-button *ngIf="auth.isLoggedIn()" class="example-icon" aria-label="Example icon-button with cart icon">
+  <button mat-icon-button *ngIf="auth.isLoggedIn()" (click)="cartClicked()" class="example-icon" aria-label="Example icon-button with cart icon">
    <mat-icon>local_grocery_store</mat-icon>
  </button>
 

@@ -9,6 +9,7 @@ const Product = require('../models/product');
 
 
 router.post("/", upload.single('image'),async (req,res) =>{
+    console.log("hit")
     console.log(req.file)
 
     const product = await new Product({

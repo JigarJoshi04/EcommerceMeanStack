@@ -6,6 +6,8 @@ const dotenv = require('dotenv');
 
 const authRouter = require('./routes/auth')
 const productRouter = require('./routes/product')
+const cartRouter = require('./routes/cart')
+const profileRouter = require('./routes/profile')
 dotenv.config();
 
 mongoose.connect(process.env.DB_CONNECT,{useNewUrlParser : true , useUnifiedTopology: true ,useFindAndModify: false}, ()=> console.log('Connected to Db!!'));
@@ -20,7 +22,8 @@ const homeRouter = require('./routes/home')
 app.use('/api',homeRouter);
 app.use('/api/auth',authRouter)
 app.use('/api/product',productRouter)
-
+app.use('/api/cart/',cartRouter)
+app.use('/api/profile/',profileRouter)
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
